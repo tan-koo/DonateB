@@ -1,0 +1,783 @@
+
+<%- include("partials/header1") %>
+
+<div class="container mt-2">
+
+  <!-- topic -->
+  <div class="row mt-1 mb-0">
+    <div class="col-8 mb-0 mr-0 gif-section">
+      <img class="img-fluid rounded"
+        src="https://images.squarespace-cdn.com/content/v1/5bc7b3b05239588cb627c3ba/1548876876573-Y3NAPWXN01397DLQBRUK/ke17ZwdGBToddI8pDm48kPoswlzjSVMM-SxOp7CV59BZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI6FXy8c9PWtBlqAVlUS5izpdcIXDZqDYvprRqZ29Pw0o/hospital_emergency.gif?fbclid=IwAR1z9QK340R19alb1rCx-m-aWj38ZbddnppQiRoc4-Tc4bkI1o4V30cE5Gg">
+    </div>
+
+    <div class="col-4 mb-0">
+      <blockquote class="blockquote text-center" style="padding-top: 12rem;">
+        <h1 style="color: white;">Hospital list</h1>
+        <h2 style="color: white;">in Bankok city.</h2>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- search -->
+  <div class="row mt-0 pt-0 mb-4">
+    <div class="col">
+      <div class="input-group" style="padding-left: 15rem; padding-right: 15rem;">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-search"></i></span>
+        </div>
+        <input type="text" class="form-control" placeholder="Hospital Name" onkeyup="myFunction()">
+      </div>
+    </div>
+  </div>
+
+  <!-- content -->
+  <div class="row mt-4">
+
+    <!-- map -->
+    <div class="col-6 sticky-top pt-3">
+      <div class="card border-0">
+        <div class="card-header bg-warning text-white">
+          <h2>Map</h2>
+        </div>
+        <div class="card-body">
+          <div class="img-thumbnail map" style="border: 0px;">
+            <div class="gmap_canvas"><iframe width="100%" height="400px" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%97%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%AB%E0%B8%A1%E0%B8%94%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- table -->
+    <div class="col-6 pt-3">
+      <table id="myTable" class="table table-borderless table-striped"
+        style="background-color: white; border-radius: 0.5rem;">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Tel</th>
+            <th>Location</th>
+            <th>Contact</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=2%20%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%A7%E0%B8%B4%E0%B8%88%E0%B8%B1%E0%B8%A2%207%20%E0%B8%96%E0%B8%99%E0%B8%99%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%E0%B8%95%E0%B8%B1%E0%B8%94%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%2047&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>กรุงเทพ</td>
+            <td>0-2310-3000</td>
+            <td>2 ซอยศูนย์วิจัย 7 ถนนเพชรบุรีตัดใหม่ 47</td>
+            <td class="un"><a class="page-scroll" href="https://www.bangkokhospital.com/th"
+                style="color: blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=124%20%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%AA%E0%B8%B5%E0%B8%A5%E0%B8%A1%204-6%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%A3%E0%B8%B1%E0%B8%81%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%A3%E0%B8%B1%E0%B8%81&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>กรุงเทพคริสเตียน</td>
+            <td>0-2235-1000-7,0-2634-0560-79</td>
+            <td>124 ถนนสีลม 4-6 แขวงบางรัก เขตบางรัก</td>
+            <td class="un"><a class="page-scroll" href="https://www.bch.in.th/" style="color: blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%98%E0%B8%99%201&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>กรุงธน 1</td>
+            <td>0-2438-0040-5</td>
+            <td>337 ถนนตากสิน 17 แขวงบุคคโล เขตธนบุรี</td>
+            <td class="un"><a class="page-scroll"
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjt0PrqhJjqAhVjwzgGHTQQCwMQFjABegQIAxAB&url=https%3A%2F%2Fwww.thonburihospital.com%2F&usg=AOvVaw2WSuXLxdBJNy_-tBr0ZLh4"
+                style="color: blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%98%E0%B8%99%202&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>กรุงธน 2</td>
+            <td>0-2874-6766-70</td>
+            <td>216/6 ถนนสุขสวัสดิ์ แขวงบางปะกอก. เขตราษฎร์บูรณะ</td>
+            <td class="un"><a class="page-scroll"
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj-v72NhZjqAhWszTgGHba1DdAQFjADegQIBBAB&url=https%3A%2F%2Fwww.thonburi2hospital.com%2F&usg=AOvVaw2xeidk_xNs7gD1scmWFOoQ"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%20%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%84%E0%B8%97%201&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>กล้วยน้ำไท 1</td>
+            <td>0-2769-2000</td>
+            <td>80 ซอยโรงพยาบาล 2 ถนนพระราม 4 คลองเตย</td>
+            <td class="un"><a class="page-scroll"
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiW5IexhZjqAhVmzjgGHdcsDcsQFjAAegQIARAC&url=http%3A%2F%2Fwww.kluaynamthai.com%2Fcontact%2F&usg=AOvVaw14MUbUjDeQIEnmwH_hQkrY"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%20%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%84%E0%B8%97%202&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>กล้วยน้ำไท 2</td>
+            <td>0-2399-4259-63</td>
+            <td>27 ซอยโสภณ ถนนสุขุมวิท 68 บางนา</td>
+            <td class="un"><a class="page-scroll"
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiTh-m8hZjqAhXdxzgGHbcEBesQFjAAegQIARAC&url=http%3A%2F%2Fwww.kluaynamthai2.com%2FContact%2Findex.php&usg=AOvVaw1FyANwRaP8RYFbPDUFhgNW"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%20%E0%B8%81%E0%B8%A5%E0%B8%B2%E0%B8%87&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>กลาง</td>
+            <td>0-2221-6141-54</td>
+            <td>514 ถนนหลวง เขตป้อมปราบฯ กรุงเทพฯ</td>
+            <td class="un"><a class="page-scroll"
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiF967LhZjqAhUazTgGHfGfCRoQFjAAegQIARAC&url=http%3A%2F%2Fwww.klanghospital.go.th%2F&usg=AOvVaw3kRoPW00tIzRNt2E0xXcXM"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%20%E0%B8%81%E0%B8%A7%E0%B9%8B%E0%B8%AD%E0%B8%87%E0%B8%AA%E0%B8%B4%E0%B8%A7&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>กว๋องสิว</td>
+            <td>0-2221-8487,0-2222-8869</td>
+            <td>513-5 ถนนเจริญกรุง เขตสัมพันธวงศ์</td>
+            <td class="un">
+              <c class="page-scroll"
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiDs_vWhZjqAhXyyDgGHdIsA1IQFjAAegQIARAC&url=http%3A%2F%2Fwww.kwongsiew.com%2Fthai%2Fhospital%2Fhospital.html&usg=AOvVaw3WHX3BhDiCK8ortm9V4hJ5"
+                style="color:black">-</c>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%81%E0%B8%A9%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%A9%E0%B8%8E%E0%B8%A3%E0%B9%8C%20%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%99&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เกษมราษฎร์</td>
+            <td>0-2910-1600-49</td>
+            <td>950 ถนนประชาชื่น เขตบางชื่อ กรุงเทพฯ</td>
+            <td class="un"><a class="page-scroll"
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiO6cfihZjqAhUuwzgGHWRwALUQFjADegQIAhAC&url=http%3A%2F%2Fwww.kasemrad.co.th%2F&usg=AOvVaw0OsVBQ6eTEe9D7pA-xjRGY"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%81%E0%B8%A9%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%A9%E0%B8%8E%E0%B8%A3%E0%B9%8C%20%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%84&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เกษมราษฎร์ บางแค</td>
+            <td>0-2804-8959</td>
+            <td>240/24-25 หมู่ 3 ถนนเพชรเกษม 92 แขวงบ
+            <td class="un"><a class="page-scroll"
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjUh9nqhZjqAhWSxzgGHTE5BCUQFjAAegQIARAC&url=http%3A%2F%2Fwww.kasemrad.co.th%2Fbangkae%2F&usg=AOvVaw0DwTCPK478vb8mD4oMYr65"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%81%E0%B8%A9%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%A9%E0%B8%8E%E0%B8%A3%E0%B9%8C%20%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%B2%E0%B8%A0%E0%B8%B4%E0%B8%9A%E0%B8%B2%E0%B8%A5%203&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เกษมราษฎร์ สุขาภิบาล 3</td>
+            <td>0-2729-3000</td>
+            <td>58/19–21 หมู่ 3 ถนนรามคำแหง แขวงสะพานสูง เขตสะพานสูง</td>
+            <td class="un"><a class="page-scroll"
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjSs6P0hZjqAhVQyjgGHWd9BBIQFjAAegQIBRAC&url=http%3A%2F%2Fwww.kasemrad.co.th%2Framkhamhaeng%2Fth%2Fsite%2Fcontact_us&usg=AOvVaw2V2CO0wX9H1XYxt6iVQNS5"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%82%E0%B8%81%E0%B8%A5%E0%B9%80%E0%B8%94%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%A2%E0%B8%B5%E0%B8%A2%E0%B8%AA%E0%B9%8C&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>โกลเด้นเยียส์</td>
+            <td>0-2693-0733-40</td>
+            <td>55/3 ถนนสุทธิสาร เขตห้วยขวาง กรุงเทพฯ</td>
+            <td class="un"><a class="page-scroll" href="https://www.goldenyears.co.th/" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%84%E0%B8%B2%E0%B8%A1%E0%B8%B4%E0%B8%A5%E0%B9%80%E0%B8%A5%E0%B8%B5%E0%B8%A2%E0%B8%99&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>คามิลเลียน</td>
+            <td>0-2391-0136</td>
+            <td>423 ซอยทองหล่อ ถนนสุขุมวิท 55 แขวงคลองตันเหนือ เขตวัฒนา</td>
+            <td class="un"><a class="page-scroll"
+                href=" https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj3ieKNhpjqAhXWzjgGHQCSBIEQFjAAegQICBAD&url=http%3A%2F%2Fwww.camillianhospital.org%2F&usg=AOvVaw1YhqS-yXMZbaWpauPSb62N "
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%B8%20%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%B4%E0%B8%99&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>จักษุ รัตนิน</td>
+            <td>0-2639-3300</td>
+            <td>80/1 ถนนสุขุมวิท 21 ซอยอโศก</td>
+            <td class="un"><a class="page-scroll"
+                href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwigtI-YhpjqAhVK4zgGHVONCxoQFjAAegQIBBAC&url=https%3A%2F%2Fwww.rutnin.com%2F&usg=AOvVaw1I1LhbGIH9CP2oPPU10xH5"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%88%E0%B8%B8%E0%B8%AC%E0%B8%B2%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B9%8C%207&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>จุฬารัตน์ 7</td>
+            <td>02-3291559-60,02-329-1638</td>
+            <td>142/5-9 ริมถนนอ่อนนุช 90 แขวงประเวศ เขตประเวศ</td>
+            <td class="un"><a class="page-scroll" href="https://www.chularat.com/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%88%E0%B8%B8%E0%B8%AC%E0%B8%B2%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B9%8C%208&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>จุฬารัตน์ 8</td>
+            <td>02-326-7993-4,02-326-7994</td>
+            <td>342/7-8 แขวงลาดกระบัง เขตลาดกระบัง</td>
+            <td class="un"><a class="page-scroll" href="https://www.chularat.com/contact.php?lang=th"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%88%E0%B8%B8%E0%B8%AC%E0%B8%B2%E0%B8%A5%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%93&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>จุฬาลงกรณ</td>
+            <td>0-2652-4600-29</td>
+            <td>183 ถนนพระราม 4 เขตปทุมวัน</td>
+            <td class="un"><a class="page-scroll" href="https://chulalongkornhospital.go.th/kcmh/"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%88%E0%B8%95%E0%B8%99%E0%B8%B4%E0%B8%99&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เจตนิน</td>
+            <td>0-2655-5300-10</td>
+            <td>5 ซอยชิดลม ถนนเพลินจิต ลุมพินี ปทุมวัน</td>
+            <td class="un"><a class="page-scroll" href="https://jetanin.com/th/contact/" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%88%E0%B9%89%E0%B8%B2%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%B2&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เจ้าพระยา</td>
+            <td>0-2884-7000</td>
+            <td>113/44 ซอยรุ่งประชา ถนนบรมราชชนนี แขวงอรุณอมรินทร์ เขตบางกอกน้อย</td>
+            <td class="un"><a class="page-scroll" href="https://www.chaophya.com/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%8B%E0%B8%99%E0%B8%95%E0%B9%8C%E0%B8%AB%E0%B8%A5%E0%B8%B8%E0%B8%A2%E0%B8%AA%E0%B9%8C&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เซนต์หลุยส์</td>
+            <td>0-2675-5000</td>
+            <td>215 ถนนสาทรใต้ เขตสาทร</td>
+            <td class="un"><a class="page-scroll" href="http://www.saintlouis.or.th/index" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B8%B1%E0%B8%A5%E0%B9%80%E0%B8%A2%E0%B8%99%E0%B9%80%E0%B8%99%E0%B8%AD%E0%B8%A3%E0%B8%B1%E0%B8%A5&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เซ็นทรัลเยนเนอรัล</td>
+            <td>0-2552-8777</td>
+            <td>362/114 หมู่ 8 ถนนพหลโยธิน 50 แขวงอนุสาวรีย์ เขตบางเขน</td>
+            <td class="un"><a class="page-scroll" href="https://www.cgh.co.th/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%8A%20%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เด็ก สมิติเวช ศรีนครินทร์ </td>
+            <td>0-2378-9000 ต่อ แผนกผู้ป่วยนอก</td>
+            <td>ชั้น 3 โรงพยาบาลสมิติเวช ศรีนครินทร์ 488 ถ.ศรีนครินทร์ เขต สวนหลวง</td>
+            <td class="un"><a class="page-scroll"
+                href="https://www.samitivejhospitals.com/th/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81%E0%B8%AA%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%8A/"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%95%E0%B8%B2%20%E0%B8%AB%E0%B8%B9%20%E0%B8%84%E0%B8%AD%20%E0%B8%88%E0%B8%A1%E0%B8%B9%E0%B8%81&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ตา หู คอ จมูก</td>
+            <td>0-2886-6600-16</td>
+            <td>585 ถนนสิรินธร แขวงบางบำหรุ เขตบางพลัด</td>
+            <td class="un"><a class="page-scroll" href="https://eent.co.th/home/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%95%E0%B8%B2%E0%B8%81%E0%B8%AA%E0%B8%B4%E0%B8%99&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ตากสิน</td>
+            <td>0-2437-0116-29</td>
+            <td>543 ถนนสมเด็จเจ้าพระยา แขวงคองสาน เขตคลองสาน</td>
+            <td class="un"><a class="page-scroll" href="http://www.taksinhosp.go.th/tks.html"
+                style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%95%E0%B8%B3%E0%B8%A3%E0%B8%A7%E0%B8%88&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ตำรวจ</td>
+            <td>0-2252-8111-25</td>
+            <td>492/1 ถนนพระราม 1 แขวงปทุมวัน เขตปทุมวัน</td>
+            <td class="un"><a class="page-scroll" href="http://www.policehospital.org/content/home.php"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%97%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%9C%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%A8%E0%B8%B6%E0%B8%81&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ทหารผ่านศึก</td>
+            <td>0-2644-9400</td>
+            <td>123 ถนนวิภาวดีรังสิต ตำบลสามเสนใน เขตพญาไท</td>
+            <td class="un"><a class="page-scroll" href="https://www.vgh.go.th/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%98%E0%B8%B2%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เทพธารินทร</td>
+            <td>0-2240-2727</td>
+            <td>3850 ถนนพระราม 4 พระโขนง คลองเตย</td>
+            <td class="un"><a class="page-scroll" href="https://www.theptarin.com/th/home" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ไทยนครินทร์</td>
+            <td>0-2361-2712-61</td>
+            <td>345 บางนา-ตราด กม. 3.5 ข.บางนา เขตบางนา</td>
+            <td class="un"><a class="page-scroll" href="https://www.thainakarin.co.th/" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%98%E0%B8%99%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%201&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ธนบุรี 1</td>
+            <td>0-2412-0020</td>
+            <td>34/1 ซอย 44 ถนนอิสรภาพ เขตบางกอกน้อย</td>
+            <td class="un">
+              <c class="page-scroll" href="https://www.thonburihospital.com/" style="color:black;">-</c>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%98%E0%B8%99%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%202&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ธนบุรี 2</td>
+            <td>0-2448-3845-58</td>
+            <td>43/4 ม.18 ถนนบรมราชชนนี แขวงศาลาธรรมสพน์ เขตทวีวัฒนา</td>
+            <td class="un">
+              <c class="page-scroll" href="https://www.thonburi2hospital.com/" style="color:black;">-</c>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%98%E0%B8%99&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>นครธน</td>
+            <td>0-2416-5454,0-2895-4000</td>
+            <td>49 ถนนพระรามที่ 2 แขวงแสมดำ เขตบางขุนเทียน</td>
+            <td class="un"><a class="page-scroll" href="https://www.nakornthon.com/home" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%AD%E0%B8%81%209%20%E0%B8%AD%E0%B8%B4%E0%B8%99%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%99%E0%B8%8A%E0%B8%B1%E0%B9%88%E0%B8%99%E0%B9%81%E0%B8%99%E0%B8%A5&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>บางกอก 9 อินเตอร์เนชั่นแนล</td>
+            <td>0-2877-1111</td>
+            <td>8/245 หมู่ 4 ถนนพระราม 2 กม. 1 จอมทอง</td>
+            <td class="un"><a class="page-scroll" href="https://www.bangpakokhospital.com/" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%81%201&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>บางปะกอก 1</td>
+            <td>0-2872-1111</td>
+            <td>611/42-43 ม.4 ซ.สุขสวัสดิ์ 25/1 ถ. สุขสวัสดิ์ ต. บางปะกอก ราษฎร์บูรณะ</td>
+            <td class="un"><a class="page-scroll" href="https://www.bangpakok1.com/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%81%202&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>บางปะกอก 2</td>
+            <td>0-2899-0130-9</td>
+            <td>38/7-8 ถนนเอกชัย ตำบลบางบอน เขตบางบอน</td>
+            <td class="un">
+              <c class="page-scroll" href="" style="color:black;">-</c>
+            </td>
+          </tr>
+          <!-- -------------------------------------------------------------------------------------------------------------------------- -->
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%9B%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%81%205&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>บางปะกอก 5</td>
+            <td>0-2894-1434-6</td>
+            <td>81/100-102 ม.6 ซอยวัดหัวกระบือ ถนนบางขุนเทียน-ชายทะเล ตำบลแสมดำ เขตบางขุนเทียน</td>
+            <td class="un"><a class="page-scroll" href="" style="color:black;">-</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%A1%E0%B8%94%201&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>บางมด 1</td>
+            <td>0-2867-0606</td>
+            <td>59/7 หมู่ 10 ถนนพระราม 2 แขวงบางมด เขตจอมทอง</td>
+            <td class="un"><a class="page-scroll" href="http://www.bangmodhospital.com/about"
+                style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%A1%E0%B8%94%203&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>บางมด 3</td>
+            <td>0-2416-8561-2</td>
+            <td>71/5-6 หมู่ที่ 8 ถนนเอกชัย ตำบลบางบอน เขตบางขุนเทียน</td>
+            <td class="un">
+              <c class="page-scroll" href="" style="color:black;">-</c>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%A3%E0%B8%B1%E0%B8%81%20(%E0%B8%81%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A1%E0%B9%82%E0%B8%A3%E0%B8%84)&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>บางรัก (กองกามโรค)</td>
+            <td>0-2286-0431 189</td>
+            <td>ถนนสาทรใต้ เขตสาทร แขวงสาทร</td>
+            <td class="un">
+              <c class="page-scroll" href="" style="color:black;">-</c>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9A%E0%B8%B3%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A9%E0%B8%8F%E0%B8%A3&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>บำรุงราษฏร</td>
+            <td>0-2667-1000</td>
+            <td>33 สุขุมวิท ซอย 3 ( นานาเหนือ) เขตวัฒนา</td>
+            <td class="un"><a class="page-scroll" href="https://www.bumrungrad.com/th" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9A%E0%B8%B5%20%E0%B9%81%E0%B8%84%E0%B8%A3%E0%B9%8C%20%E0%B9%80%E0%B8%A1%E0%B8%94%E0%B8%B4%E0%B8%84%E0%B8%AD%E0%B8%A5%E0%B9%80%E0%B8%8B%E0%B9%87%E0%B8%99%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>บี แคร์ เมดิคอลเซ็นเตอร์</td>
+            <td>0-2523-3359-71</td>
+            <td>29 หมู่ 6 ถนนพหลโยธิน (กม. 26-27) แขวงสายไหม</td>
+            <td class="un"><a class="page-scroll" href="https://bcaremedicalcenter.com/" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9A%E0%B8%B5%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%99%E0%B9%80%E0%B8%AD%E0%B8%8A&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>บีเอ็นเอช</td>
+            <td>0-2686-2700</td>
+            <td>9/1 ถนนคอนแวนต์ สีลม</td>
+            <td class="un"><a class="page-scroll" href="https://www.bnhhospital.com/th/" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9B%E0%B8%B4%E0%B8%A2%E0%B8%B0%E0%B9%80%E0%B8%A7%E0%B8%97&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ปิยะเวท</td>
+            <td>0-2641-4499</td>
+            <td>998 ถนนพระราม 9 เขตห้วยขวาง</td>
+            <td class="un"><a class="page-scroll" href="http://www.piyavate.com/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5670%2F1%20%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%9E%E0%B8%AB%E0%B8%A5%E0%B9%82%E0%B8%A2%E0%B8%98%E0%B8%B4%E0%B8%99%20%E0%B8%9E%E0%B8%8D%E0%B8%B2%E0%B9%84%E0%B8%97&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เปาโล เมโมเรียล</td>
+            <td>0-2279-7000-9</td>
+            <td>670/1 ถนนพหลโยธิน พญาไท</td>
+            <td class="un"><a class="page-scroll" href="https://www.paolohospital.com/th-TH/phahol/Home"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%9B%E0%B8%B2%E0%B9%82%E0%B8%A5%20%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เปาโล สยาม</td>
+            <td>0-2514-4140-9</td>
+            <td>15/10 ซอยโชคชัย 4 ถนนลาดพร้าว 53 เขตลาดพร้าว</td>
+            <td class="un"><a class="page-scroll" href="https://www.paolohospital.com/th-TH/chokchai4/Home"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9E%E0%B8%8D%E0%B8%B2%E0%B9%84%E0%B8%97%201&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>พญาไท 1</td>
+            <td>0-2642-7373</td>
+            <td>364 ถนนศรีอยุธยา เขตราชเทวี</td>
+            <td class="un"><a class="page-scroll" href="https://www.phyathai.com/aboutus_detail/1"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9E%E0%B8%8D%E0%B8%B2%E0%B9%84%E0%B8%97%202&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>พญาไท 2</td>
+            <td>0-2617-2444</td>
+            <td>943 ถนนพหลโยธิน 1-3 แขวงสามเสนใน เขตราชเทวี</td>
+            <td class="un"><a class="page-scroll" href="https://www.phyathai.com/about_detail/2"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9E%E0%B8%8D%E0%B8%B2%E0%B9%84%E0%B8%97%203&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>พญาไท 3</td>
+            <td>0-2467-1111</td>
+            <td>207/26 ถนนเพชรเกษม 17-19 แขวงปากคลอง เขตภาษีเจริญ</td>
+            <td class="un"><a class="page-scroll" href="https://www.phyathai.com/about_detail/3"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%87%E0%B8%81%E0%B8%B8%E0%B8%8F%E0%B9%80%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%B2&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>พระมงกุฏเกล้า</td>
+            <td>0-2354-7600-28</td>
+            <td>315 ถนนราชวิถี เขตราชเทวี</td>
+            <td class="un"><a class="page-scroll" href="http://www.pmk.ac.th/index.php" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <!-- ---------------------------------------------------------------------------------------------- -->
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%81%E0%B9%89%E0%B8%B2&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>พระราม 9</td>
+            <td>0-2202-9999</td>
+            <td>99 ซอยโรงพยาบาลพระรามเก้า ถนนพระราม 9 ห้วยขวาง</td>
+            <td class="un"><a class="page-scroll" href="https://www.praram9.com/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B9%80%E0%B8%A7%E0%B8%8A&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เพชรเวช</td>
+            <td>0-2718-1515</td>
+            <td>2469/15 ถนนเพชรบุรีตัดใหม่ ระหว่างแยกเอกมัย-คลองตัน เขตห้วยขวาง</td>
+            <td class="un"><a class="page-scroll" href="https://www.petcharavejhospital.com/th/Home"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A0%E0%B8%B9%E0%B8%A1%E0%B8%B4%E0%B8%9E%E0%B8%A5%E0%B8%AD%E0%B8%94%E0%B8%B8%E0%B8%A5%E0%B8%A2%E0%B9%80%E0%B8%94%E0%B8%8A&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ภูมิพลอดุลยเดช</td>
+            <td>0-2534-7000</td>
+            <td>ถนนพหลโยธิน 56 แขวงสีกัน เขตดอนเมือง</td>
+            <td class="un"><a class="page-scroll" href="http://www.bhumibolhospital.rtaf.mi.th/"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A1%E0%B8%87%E0%B8%81%E0%B8%B8%E0%B8%8F%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B0&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>มงกุฏวัฒนะ</td>
+            <td>0-2574 -5000 -9</td>
+            <td>34/40 ถ.แจ้งวัฒนะ แขวงทุ่งสองห้อง เขตหลักสี่</td>
+            <td class="un"><a class="page-scroll" href="http://www.mongkutwattana.co.th/" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A1%E0%B8%99%E0%B8%B2%E0%B8%A3%E0%B8%A1%E0%B8%A2%E0%B9%8C&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>มนารมย์</td>
+            <td>0-2725-9595</td>
+            <td>9 สุขุมวิท 70/3 เขตบางนา</td>
+            <td class="un"><a class="page-scroll" href="https://www.manarom.com/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A1%E0%B8%B4%E0%B8%8A%E0%B8%8A%E0%B8%B1%E0%B9%88%E0%B8%99&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>มิชชั่น</td>
+            <td>0-2282-1100,0-2281-1422</td>
+            <td>430 ถนนพิษณุโลก เขตดุสิต</td>
+            <td class="un"><a class="page-scroll" href="https://www.mission-hospital.org/th/"
+                style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%A1%E0%B9%82%E0%B8%A2&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เมโย</td>
+            <td>0-2579-1770-4</td>
+            <td>2012/5-7 ถนนพหลโยธิน สี่แยกเกษตร จตุจักร</td>
+            <td class="un">
+              <c class="page-scroll" href="" style="color:black;">-</c>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A2%E0%B8%B1%E0%B8%99%E0%B8%AE%E0%B8%B5&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ยันฮี</td>
+            <td>0-2879-0300</td>
+            <td>454 ซอยจรัญสนิทวงศ์ 90 แขวงบางอ้อ เขตบางพลัด</td>
+            <td class="un"><a class="page-scroll" href="https://th.yanhee.net/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A3%E0%B8%96%E0%B9%84%E0%B8%9F&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>โรงพยาบาลบุรฉัตรไชยากร</td>
+            <td>02-223-7960,0-2245-2480</td>
+            <td>700 ถนนนิคมมักกะสัน เขตราชเทวี</td>
+            <td class="un"><a class="page-scroll"
+                href="https://hisuparat.wordpress.com/%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B9%81%E0%B8%A3%E0%B8%81/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%89%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B9%84%E0%B8%8A%E0%B8%A2%E0%B8%B2%E0%B8%81%E0%B8%A3/"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%A7%E0%B8%B4%E0%B8%96%E0%B8%B5&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ราชวิถี</td>
+            <td>0-2354-8108-37</td>
+            <td>2 ถนนพญาไท แขวงทุ่งพญาไท เขตราชเทวี</td>
+            <td class="un"><a class="page-scroll" href="https://www.rajavithi.go.th/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B8%B3%E0%B9%81%E0%B8%AB%E0%B8%87&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>รามคำแหง</td>
+            <td>0-2374-0200-16</td>
+            <td>2138 ถนนรามคำแหง 34 แขวงหัวหมาก เขตบางกะปิ </td>
+            <td class="un"><a class="page-scroll" href="https://www.ram-hosp.co.th/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%B2%E0%B8%98%E0%B8%B4%E0%B8%9A%E0%B8%94%E0%B8%B5&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>รามาธิบดี</td>
+            <td>0-2354-7308-10</td>
+            <td>270 ถนนพระรามหก แขวงพญาไท เขตราชเทวี</td>
+            <td class="un"><a class="page-scroll" href="https://med.mahidol.ac.th/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B1%E0%B8%87%20%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B8%AD%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%99%E0%B8%B8%E0%B8%8A%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B1%E0%B8%87&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ลาดกระบัง</td>
+            <td>0-2326-7711</td>
+            <td>ซอยอ่อนนุช เขตลาดกระบัง</td>
+            <td class="un">
+              <c class="page-scroll" href="" style="color:black;">-</c>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%A7&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ลาดพร้าว</td>
+            <td>0-2530-2556-69</td>
+            <td>2699 ถนนลาดพร้าว 95-97 แขวงวังทองหลาง เขตวังทองหลาง</td>
+            <td class="un"><a class="page-scroll" href="http://www.ladpraohospital.com/home.php"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%A5%E0%B8%B4%E0%B8%94%E0%B8%AA%E0%B8%B4%E0%B8%99&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เลิดสิน</td>
+            <td>0-2353-9798-9</td>
+            <td>190 ถนนสีลม แขวงศรีเวียง เขตบางรัก</td>
+            <td class="un"><a class="page-scroll" href="http://lerdsin.go.th/index.php/en/" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A7%E0%B8%8A%E0%B8%B4%E0%B8%A3%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>วชิรพยาบาล</td>
+            <td>0-2244-3000</td>
+            <td>681 ถนนสามเสน ตำบลวชิรพยาบาล เขตดุสิต</td>
+            <td class="un"><a class="page-scroll" href="https://www.vajira.ac.th/b/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A7%E0%B8%B4%E0%B8%8A%E0%B8%B1%E0%B8%A2%E0%B8%A2%E0%B8%B8%E0%B8%97%E0%B8%98&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>วิชัยยุทธ</td>
+            <td>0-2618-6201-19</td>
+            <td>114 ถนนเศรฐศิริ เขตพญาไท</td>
+            <td class="un"><a class="page-scroll" href="https://www.vichaiyut.com/th/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A7%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A1%20&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>วิภาราม</td>
+            <td>0-2722-2500-23</td>
+            <td>2677 ถนนพัฒนาการ แขวงสวนหลวง เขตสวนหลวง</td>
+            <td class="un"><a class="page-scroll" href="https://www.vibharam.com/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A7%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%94%E0%B8%B5%2051%2F3%20%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%87%E0%B8%B2%E0%B8%A1%E0%B8%A7%E0%B8%87%E0%B8%A8%E0%B9%8C%E0%B8%A7%E0%B8%B2%E0%B8%99%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%A2%E0%B8%B2%E0%B8%A7%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%88%E0%B8%B8%E0%B8%95%E0%B8%B1%E0%B8%81%E0%B8%A3&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>วิภาวดี</td>
+            <td>0-2561-1260-7</td>
+            <td>51/3 ถนนงามวงศ์วาน แขวงลาดยาว เขตจุตักร</td>
+            <td class="un"><a class="page-scroll" href="https://vibhavadi.com/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%A7%E0%B8%8A%E0%B8%98%E0%B8%B2%E0%B8%99%E0%B8%B5&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>เวชธานี</td>
+            <td>0-2734-0000</td>
+            <td>1 ถนนลาดพร้าว 111 แขวงคลองจั่น เขตบางกะปิ</td>
+            <td class="un"><a class="page-scroll" href="https://www.vejthani.com/th/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%8A%E0%B8%B1%E0%B8%A2%201&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ศรีวิชัย 1</td>
+            <td>0-2412-0055-60</td>
+            <td>240/2-7 ถนนจรัญสนิทวงศ์ 31/1 แขวงบ้านช่างหล่อ เขตบางกอกน้อย</td>
+            <td class="un">
+              <c class="page-scroll" href="" style="color:black;">-</c>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%8A%E0%B8%B1%E0%B8%A2%202%2015%2F38-43%20%E0%B8%96%E0%B8%99%E0%B8%99%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B9%80%E0%B8%81%E0%B8%A9%E0%B8%A1%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%9E%E0%B8%A5%E0%B8%B9%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%AB%E0%B8%99%E0%B8%AD%E0%B8%87%E0%B9%81%E0%B8%82%E0%B8%A1&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ศรีวิชัย 2</td>
+            <td>0-2441-6999</td>
+            <td>15/38-43 ถนนเพชรเกษม แขวงหนองค้างพลู เขตหนองแขม</td>
+            <td class="un">
+              <c class="page-scroll" href="" style="color:black;">-</c>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ศรีสยาม</td>
+            <td>0-2944-7111</td>
+            <td>44/505 หมู่ 10 ถนนนวมินทร์ แขวงคลองกุ่ม เขตบางกะปิ</td>
+            <td class="un"><a class="page-scroll" href="https://www.phyathai.com/about_detail/5"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A8%E0%B8%B4%E0%B8%84%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ศิครินทร์</td>
+            <td>0-2366-9900-99</td>
+            <td>สี่แยกศิครินทร์ 4/29 ถนนศรีนครินทร์ เขตบางนา</td>
+            <td class="un"><a class="page-scroll" href="https://www.sikarin.com/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A8%E0%B8%B4%E0%B8%A3%E0%B8%B4%E0%B8%A3%E0%B8%B2%E0%B8%8A&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ศิริราช</td>
+            <td>0-2419-7000</td>
+            <td>2 ถ.พรานนก แขวงศิริราช เขตบางกอกน้อย</td>
+            <td class="un"><a class="page-scroll" href="https://www.si.mahidol.ac.th/sirirajhospital/"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%A1%E0%B8%B0%E0%B9%80%E0%B8%A3%E0%B9%87%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>ศูนย์มะเร็งกรุงเทพ</td>
+            <td>02-278-5716 -21</td>
+            <td>44 ซอยอารีย์ 1 ถนนพหลโยธิน แขวงสามเสนใน เขตพญาไท</td>
+            <td class="un"><a class="page-scroll" href="http://www.bkkcs.com/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%87%E0%B8%86%E0%B9%8C&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>สงฆ์</td>
+            <td>0-2354-4282-9</td>
+            <td>445 ถนนศรีอยุธยา แขวงทุ่งพญาไท เขตราชเทวี</td>
+            <td class="un"><a class="page-scroll" href="https://www.priest-hospital.go.th/" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%A1%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%88%E0%B9%80%E0%B8%88%E0%B9%89%E0%B8%B2%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%B2&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>สมเด็จเจ้าพระยา</td>
+            <td>0-2437-0200-8</td>
+            <td>112 ถนนสมเด็จเจ้าพระยา 13 แขวงคลองสาน เขตคลองสาน</td>
+            <td class="un"><a class="page-scroll" href="http://www.somdet.go.th/public/" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%A1%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%88%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%9B%E0%B8%B4%E0%B9%88%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%A5%E0%B9%89%E0%B8%B2&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>สมเด็จพระปิ่นเกล้า</td>
+            <td>0-2468-0116-20</td>
+            <td>1028 ถนน สมเด็จพระเจ้าตากสิน 22 แขวงบุคคโล เขตธนบุรี</td>
+            <td class="un"><a class="page-scroll" href="https://www.spph.go.th/contact.php" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%8A%20133%20%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B4%E0%B8%97%2049%20%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%95%E0%B8%A2%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B7%E0%B8%AD%20%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>สมิติเวช สุขุมวิท</td>
+            <td>0-2711-8000</td>
+            <td>133 สุขุมวิท 49 คลองเตยเหนือ วัฒนา</td>
+            <td class="un"><a class="page-scroll"
+                href="https://www.samitivejhospitals.com/th/%E0%B8%AA%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%8A%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B4%E0%B8%97/"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%8A%20%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>สมิติเวช ศรีนครินทร์</td>
+            <td>0-2731-7000</td>
+            <td>488 ถนนศรีนครินทร์ แขวง/เขต สวนหลวง</td>
+            <td class="un"><a class="page-scroll"
+                href="https://www.samitivejhospitals.com/th/%E0%B8%AA%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%8A%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C/"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%AB%E0%B8%A1&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>สายไหม</td>
+            <td>0-2991-8999</td>
+            <td>91 ถนนเฉลิมพงษ์ แขวงสายไหม เขตสายไหม</td>
+            <td class="un"><a class="page-scroll" href="https://www.saimai.co.th/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%B4%E0%B8%99%E0%B9%81%E0%B8%9E%E0%B8%97%E0%B8%A2%E0%B9%8C%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%84%E0%B8%B1%E0%B8%99%E0%B8%99%E0%B8%B2%E0%B8%A2%E0%B8%B2%E0%B8%A7%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%84%E0%B8%B1%E0%B8%99%E0%B8%99%E0%B8%B2%E0%B8%A2%E0%B8%B2%E0%B8%A7&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>สินแพทย์</td>
+            <td>0-2793-5099</td>
+            <td>9/99 ถ.รามอินทรา (กม. 8.5) แขวงคันนายาว เขตคันนายาว</td>
+            <td class="un"><a class="page-scroll" href="https://www.synphaet.co.th/" style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B4%E0%B8%97&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>สุขุมวิท</td>
+            <td>0-2391-0011</td>
+            <td>1411 ถนนสุขุมวิท แขวงพระโขนงเหนือ เขตวัฒนา</td>
+            <td class="un"><a class="page-scroll" href="http://www.sukumvithospital.com/" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87%E0%B8%9E%E0%B9%88%E0%B8%AD%E0%B8%97%E0%B8%A7%E0%B8%B5%E0%B8%A8%E0%B8%B1%E0%B8%81%E0%B8%94%E0%B8%B4%E0%B9%8C%E0%B8%8A%E0%B8%B8%E0%B8%95%E0%B8%B4%E0%B8%99%E0%B8%98%E0%B9%82%E0%B8%A3%E0%B8%AD%E0%B8%B8%E0%B8%97%E0%B8%B4%E0%B8%A8&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>หลวงพ่อทวีศักดิ์ชุตินธโรอุทิศ</td>
+            <td>0-2429-3575-81</td>
+            <td>39 หมู่ 4 ซอยเพชรเกษม81 แขวงหนองแขม เขตหนองแขม</td>
+            <td class="un"><a class="page-scroll" href="http://www.msdbangkok.go.th/m2m/lpt.html"
+                style="color:blue;">link</a></td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B9%83%E0%B8%88%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%20&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>หัวใจกรุงเทพ</td>
+            <td>0-2310-3000</td>
+            <td>2 ซอยศูนย์วิจัย 7 ถนนเพชรบุรีตัดใหม่</td>
+            <td class="un"><a class="page-scroll" href="https://www.bangkokhospital.com/" style="color:blue;">link</a>
+            </td>
+          </tr>
+          <tr
+            onclick="document.getElementById('gmap_canvas').src='https://maps.google.com/maps?q=%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B9%80%E0%B8%89%E0%B8%B5%E0%B8%A2%E0%B8%A7&t=&z=13&ie=UTF8&iwloc=&output=embed'">
+            <td>หัวเฉียว</td>
+            <td>0-2223-1351-70</td>
+            <td>665 ถนนบำรุงเมือง แขวงคลองมหานาค เขตป้อมปราบศัตรูพ่าย</td>
+            <td class="un"><a class="page-scroll" href="http://www.hc-hospital.com/" style="color:blue;">link</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<script>
+
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+
+        if (txtValue.toUpperCase().indexOf(filter) > -1) { tr[i].style.display = ""; }
+        else { tr[i].style.display = "none"; }
+      }
+    }
+  }
+
+</script>
+
+<%- include("partials/footer") %>

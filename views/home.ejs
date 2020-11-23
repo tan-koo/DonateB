@@ -1,0 +1,198 @@
+
+<%- include("partials/header1") %>
+
+<div class="container mt-2">
+
+  <div class="row">
+
+    <!-- profile -->
+    <div class="col-4">
+      <div class="card">
+        <img class="card-img-top mx-auto d-block" style="height: 250px;" src="<%= currentUser.image %>">
+        <div class="card-body">
+          <h4><%= currentUser.username %></h4>
+          <a class="btn btn-outline-warning btn-sm" href="/edit">edit</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- new post -->
+    <div class="col-8">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">New Post</h2>
+          <form action="/users/home" method="POST">
+            <div class="form-row">
+              <div class="form-group col">
+
+                <label>Description</label>
+                <textarea class="form-control" name="text" rows="3"></textarea>
+
+                <label class="mt-1">Image</label>
+                <input type="file" name="image" class="form-control" aria-describedby="fileHelp">
+
+                <div class="custom-control custom-checkbox mt-2">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1" name="tag"
+                    value="Blood-donation" checked="">
+                  <label class="custom-control-label" for="customCheck1">Blood Donation (check this box to donation
+                    post)</label>
+                </div>
+
+              </div>
+            </div>
+            <button class="btn btn-outline-success btn-block" type="submit">Post</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- posted -->
+  <div class="row">
+    <div class="col" style="font-family: 'Mali', cursive;">
+
+      <% Post4selves.reverse().forEach(function(post4selves){ %>
+      <% if(post4selves.tag === "Blood-donation"){ %>
+      <% if( currentUser.id === post4selves.id || currentUser.permission === "admin" ){ %>
+      <div class="card border-0 mt-4">
+        <div class="card-header bg-danger text-white">Donation post
+          <div><a class="btn btn-warning" href="/users/editpost/<%= post4selves._id %>">Edit</a></div>
+          <form action="/users/<%= post4selves._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+        <div class="card-body">
+          <p><%= post4selves.text %></p>
+        </div>
+
+        <form action="/users/public" method="POST" class="pl-3 pr-3 m-2">
+          <textarea class="form-control mb-2" name="text" rows="1"></textarea>
+          <button style="float: right;" type="submit" class="btn btn-sm btn-outline-info ml-2">Comment</button>
+          <a class="btn btn-sm btn-outline-primary accordion" style="float: right;" id="<%= post4selves._id %>">All
+            Comments</a>
+
+          <div class="panel panel-default" style="display: none; margin-top: 3rem;">
+            <div class="panel-body">
+              <div class="row">
+                <% Commento.forEach(function(comment){ %>
+                <% if( (post4selves._id).toString() === comment.post){ %>
+                <div class="col-6 commentcheck" id="<%= comment.post %>">
+                  <blockquote class="blockquote">
+                    <p class="mb-0 text-warning"><small><%= comment.text %></small></p>
+                    <footer class="blockquote-footer"><small><%= comment.author %></small>
+                      <% if( currentUser.id === comment.author_id || currentUser.permission === "admin" ){ %>
+                      <div class="row pr-3" style="float: right;">
+                        <div><a class="btn btn-outline-warning btn-sm"
+                            href="/users/editpost/editcomment/<%= comment._id %>">Edit</a></div>
+                        <form action="/users/<%= comment._id %>?_method=DELETE" method="POST">
+                          <button class="btn btn-outline-danger btn-sm ml-2">Delete</button>
+                        </form>
+                      </div>
+                      <% } %>
+                    </footer>
+                  </blockquote>
+                </div>
+                <% } %>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="card-footer">By <%= post4selves.name %><div style="float: right;"><%= post4selves.date %></div>
+        </div>
+      </div>
+      <% } %>
+      <% } %>
+
+      <% if(post4selves.tag !== "Blood-donation"){ %>
+      <% if( currentUser.id === post4selves.id || currentUser.permission === "admin" ){ %>
+      <div class="card border-0 mt-4">
+        <div class="card-header bg-success text-white">Post
+          <div><a class="btn btn-warning" href="/users/editpost/<%= post4selves._id %>">Edit</a></div>
+          <form action="/users/<%= post4selves._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+        <div class="card-body">
+          <p><%= post4selves.text %></p>
+        </div>
+
+        <form action="/users/public" method="POST" class="pl-3 pr-3 m-2">
+          <textarea class="form-control mb-2" name="text" rows="1"></textarea>
+          <button style="float: right;" type="submit" class="btn btn-sm btn-outline-info ml-2">Comment</button>
+          <a class="btn btn-sm btn-outline-primary accordion" style="float: right;" id="<%= post4selves._id %>">All
+            Comments</a>
+
+          <div class="panel panel-default" style="display: none; margin-top: 3rem;">
+            <div class="panel-body">
+              <div class="row">
+                <% Commento.forEach(function(comment){ %>
+                <% if( (post4selves._id).toString() === comment.post){ %>
+                <div class="col-6 commentcheck" id="<%= comment.post %>">
+                  <blockquote class="blockquote">
+                    <p class="mb-0 text-success"><small><%= comment.text %></small></p>
+                    <footer class="blockquote-footer"><small><%= comment.author %></small>
+                      <% if( currentUser.id === comment.author_id || currentUser.permission === "admin" ){ %>
+                      <div class="row pr-3" style="float: right;">
+                        <div><a class="btn btn-outline-warning btn-sm"
+                            href="/users/editpost/editcomment/<%= comment._id %>">Edit</a></div>
+                        <form action="/users/<%= comment._id %>?_method=DELETE" method="POST">
+                          <button class="btn btn-outline-danger btn-sm ml-2">Delete</button>
+                        </form>
+                      </div>
+                      <% } %>
+                    </footer>
+                  </blockquote>
+                </div>
+                <% } %>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="card-footer">By <%= post4selves.name %><div style="float: right;"><%= post4selves.date %></div>
+        </div>
+      </div>
+      <% } %>
+      <% } %>
+
+      <% }) %>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") { panel.style.display = "none"; }
+      else { panel.style.display = "block"; }
+    });
+  }
+
+  var pnu = document.getElementsByClassName("accordion");
+  var cnu = document.getElementsByClassName("commentcheck");
+  var ccount = 0;
+
+  for (a = 0; a < pnu.length; a++) {
+    var pcbase = document.getElementsByClassName("accordion")[a];
+    var pibase = $(pcbase).attr('id');
+    for (b = 0; b < pnu.length; b++) {
+      var cbase = document.getElementsByClassName("commentcheck")[b];
+      var ibase = $(cbase).attr('id');
+      if (ibase === pibase) { ccount++; }
+    }
+    document.getElementById(pibase).innerHTML = ccount + " Comment";
+    ccount = 0;
+  }
+</script>
+
+<%- include("partials/footer") %>

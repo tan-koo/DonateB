@@ -1,0 +1,112 @@
+<%- include("partials/header1") %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  div.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 80%;
+  width: 50%;
+  margin-left: 30%;
+}
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
+</style>
+
+
+
+</body> 
+
+<body style="background-image: url(https://live.staticflickr.com/8401/8603465343_6c0edc10ab_b.jpg);  background-repeat: no-repeat;
+background-attachment: fixed;  
+background-size: cover;
+background-size: 100% 100%;
+">
+
+ <style>
+
+body{
+    background-image: url(https://gseii.org/site/wp-content/uploads/2014/05/blue-gradient-wallpaper.jpg);
+    background-size:cover;
+    }
+hr{
+ background: white;	
+}
+.contact-form{
+ background:rgba(0,0,0, .6);
+ color:white;
+ margin-top: 50px;
+ padding: 20px;
+ box-shadow: 0px 0px 10px 3px whitesmoke;
+    }
+#re{
+  cursor: pointer;
+}
+#re:hover{
+  color: skyblue;
+  text-decoration: underline;
+}
+           </style>
+          </head>
+        <body>
+          
+        
+          <form  action="/edit" method="POST">
+            <input type="hidden" name="id" value=<%= currentUser._id %>>
+        <div class="container contact-form">
+          <h1 style="text-align: center;">Edit information form</h1>
+          <div style="background-color: black;">
+          <br>
+        
+          <div class="row">
+        
+               <div class="col-md-6">
+               <p style="font-size: 20px; margin-left: 2.9%;">This name that you changed will appear to everyone when you post or comment  </p>
+               
+             <div>  <div ><img src="<%= currentUser.image %>"< style="width: 200px; height:200px; margin-left: 28%;"/div></div>
+                <br>
+               </div></div>
+
+        
+               <div class="col-md-6" style="padding-right: 7%;">
+                 <div class="form-group">
+                   <label  style="margin-left: 2%" ;  >name</label>
+                   <input type="text" class="form-control" style="margin-left: 2%;" name="name" placeholder="<%= currentUser.name %>" value="<%= currentUser.name %>" >
+                 </div>
+                 <div class="form-group">
+                   <label  style="margin-left: 2%" ;     >image </label>
+                   
+                   <input type="text" class="form-control" style="margin-left: 2%" ;  name="image" placeholder="URL of images" value="<%= currentUser.image %>" >
+                 </div>
+        
+        
+                 <div class="form-group">
+                   <button class="btn btn-primary btn-block"  style="margin-left: 2%" ;          >Confirm</button>
+                 </div>
+                
+        
+               </div>
+        
+            </div>
+        
+        </div>
+      </form>
+        
+        
+        
+        </body>
+        </html>
+        
+       
+     
+    </div>
+    
+        </body>

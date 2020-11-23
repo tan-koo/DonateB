@@ -1,0 +1,98 @@
+
+<%- include("partials/header") %>
+<html>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+  div.transbox {
+    margin: 5%;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 80%;
+    width: 50%;
+  }
+
+  div.transbox p {
+    margin: 5%;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  hr {
+    background: white;
+  }
+
+  .contact-form {
+    background: rgba(0, 0, 0, .6);
+    color: white;
+    margin-top: 50px;
+    box-shadow: 0px 0px 10px 3px whitesmoke;
+  }
+
+  body {
+    background-image: url(https://image.freepik.com/free-vector/dark-wavy-background-gradient_23-2148385755.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+</style>
+
+
+<body>
+  <form action="/users/register" method="POST">
+    <div class="container contact-form">
+      <center>
+        <h1> Register<span style="font-size: 16px;"> &nbsp<i class="material-icons">&#xe89c;</i></span></h1>
+      </center>
+      <% include ./partials/messages %>
+
+      <div class="row">
+
+        <div class="col-md-6">
+
+          <label>Username</label>
+          <input type="text" class="form-control" name="username" size="1"
+            value="<%= typeof username != 'undefined' ? username : '' %>">
+          <label>Password</label>
+          <input type="password" class="form-control" name="password" size="100"
+            value="<%= typeof password != 'undefined' ? password : '' %>">
+          <label>Confirm Password</label>
+          <input type="password" class="form-control" name="confirm" size="100"
+            value="<%= typeof confirm != 'undefined' ?  confirm : '' %>">
+          <label>URL image</label>
+          <input type="text" class="form-control" name="image" size="100"
+            value="<%= typeof image != 'undefined' ?  image : '' %>">
+        </div>
+
+        <div class="col-md-6">
+
+          <label>Email</label>
+          <input type="text" class="form-control" name="email" size="100"
+            value="<%= typeof email != 'undefined' ? email : '' %>">
+          <label>Birth</label>
+          <input type="date" class="form-control" name="date" value="<%= typeof date != 'undefined' ? date : '' %>">
+          <label>name</label>
+          <input type="text" class="form-control" name="fname" size="1"
+            value="<%= typeof fname != 'undefined' ? fname : '' %>">
+          <br>
+
+        </div>
+
+      </div>
+
+      <br>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">Register</button>
+      </div>
+      <div style="opacity: 50%; text-align: center; margin-bottom: 5%;">
+        <h1> Barberan project</h1>
+      </div>
+
+    </div>
+  </form>
+
+
+</body>
+
+</html>

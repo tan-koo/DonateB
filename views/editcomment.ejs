@@ -1,0 +1,66 @@
+<%- include("partials/header1") %>
+
+<html>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.midcolumn {
+
+  width: 50%;
+  text-align: center;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+   border-radius: 1em;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+<center> Edit comment</center>
+<center><div class="row">
+    <div class="midcolumn">
+        <div class="card">
+<form  action="/users/editpost/<%= comment._id %>?_method=PUT"method="POST">    
+    
+    <div>
+         <div><strong><%= comment.author %></strong>  </div><br>
+        <input name="comment[text]" value="<%= comment.text %>"  style="width: 50%;">
+      <button type="submit" style="background-color:green; border-color: rgb(211, 211, 211); border-radius: 5px; color: white;">Edit comment</i></button>          
+    </div>
+  </form>
+</div>
+    </div>
+        </div>
+</center>

@@ -1,0 +1,184 @@
+
+<%- include("partials/header1") %>
+
+<div class="container">
+  <div class="row">
+
+    <!-- profile -->
+    <% User.forEach(function(user){ %>
+    <%  if(target_id === user.id){ %>
+    <div class="col-4 sticky-top mt-3 pt-2">
+      <div class="card border-0">
+        <img class="card-img-top mx-auto d-block" style="height: 250px;" src="<%= user.image %>">
+        <div class="card-body">
+          <h4 class="card-title"><%= user.username %></h4>
+        </div>
+      </div>
+    </div>
+    <% } %>
+    <% }) %>
+
+    <!-- posted -->
+    <div class="col-8" style="font-family: 'Mali', cursive;">
+      <% Post4selves.reverse().forEach(function(post4selves){ %>
+      <%  if(target_id === post4selves.Post_by){ %>
+
+      <% if(post4selves.tag === "Blood-donation"){ %>
+      <div class="card border-0 mt-4">
+        <h4 class="card-header bg-danger text-white">Donation post
+          <% if( currentUser.id === post4selves.id || currentUser.permission === "admin" ){ %>
+          <div><a class="btn btn-warning" href="/users/editpost/<%= post4selves._id %>">Edit</a></div>
+          <form action="/users/<%= post4selves._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+          <% } %>
+        </h4>
+        <div class="card-body">
+          <p><%= post4selves.text %></p>
+        </div>
+
+        <form action="/users/public" method="POST" class="pl-3 pr-3 m-2">
+          <textarea class="form-control mb-2" name="text" rows="1"></textarea>
+          <button style="float: right;" type="submit" class="btn btn-sm btn-outline-info ml-2">Comment</button>
+          <a class="btn btn-sm btn-outline-primary accordion" style="float: right;" id="<%= post4selves._id %>">All
+            Comments</a>
+
+          <div class="panel panel-default" style="display: none; margin-top: 3rem;">
+            <div class="panel-body">
+              <div class="row">
+                <% Commento.forEach(function(comment){ %>
+                <% if( (post4selves._id).toString() === comment.post){ %>
+                <div class="col-6 commentcheck" id="<%= comment.post %>">
+                  <blockquote class="blockquote">
+                    <p class="mb-0 text-warning"><small><%= comment.text %></small></p>
+                    <footer class="blockquote-footer"><small><%= comment.author %></small>
+                      <% if( currentUser.id === comment.author_id || currentUser.permission === "admin" ){ %>
+                      <div class="row pr-3" style="float: right;">
+                        <div><a class="btn btn-outline-warning btn-sm"
+                            href="/users/editpost/editcomment/<%= comment._id %>">Edit</a></div>
+                        <form action="/users/<%= comment._id %>?_method=DELETE" method="POST">
+                          <button class="btn btn-outline-danger btn-sm ml-2">Delete</button>
+                        </form>
+                      </div>
+                      <% } %>
+                    </footer>
+                  </blockquote>
+                </div>
+                <% } %>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+        <div class="card-footer">
+          <% if(currentUser.id === post4selves.Post_by){ %>
+          By <%= post4selves.name %><div style="float: right;"><%= post4selves.date %></div>
+          <% } %>
+          <% if(currentUser.id !== post4selves.Post_by){ %>
+          By <a href="/users/<%= post4selves.Post_by %>/profile"><%= post4selves.name %></a>
+          <div class="text-muted" style="float: right;"><%= post4selves.date %></div>
+          <% } %>
+        </div>
+      </div>
+      <% } %>
+
+      <% if(post4selves.tag !== "Blood-donation"){ %>
+      <div class="card border-0 mt-4">
+        <h4 class="card-header bg-success text-white">Post
+          <% if( currentUser.id === post4selves.id || currentUser.permission === "admin" ){ %>
+          <div><a class="btn btn-warning" href="/users/editpost/<%= post4selves._id %>">Edit</a></div>
+          <form action="/users/<%= post4selves._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+          <% } %>
+        </h4>
+        <div class="card-body">
+          <p><%= post4selves.text %></p>
+        </div>
+
+        <form action="/users/public" method="POST" class="pl-3 pr-3 m-2">
+          <textarea class="form-control mb-2" name="text" rows="1"></textarea>
+          <button style="float: right;" type="submit" class="btn btn-sm btn-outline-info ml-2">Comment</button>
+          <a class="btn btn-sm btn-outline-primary accordion" style="float: right;" id="<%= post4selves._id %>">All
+            Comments</a>
+
+          <div class="panel panel-default" style="display: none; margin-top: 3rem;">
+            <div class="panel-body">
+              <div class="row">
+                <% Commento.forEach(function(comment){ %>
+                <% if( (post4selves._id).toString() === comment.post){ %>
+                <div class="col-6 commentcheck" id="<%= comment.post %>">
+                  <blockquote class="blockquote">
+                    <p class="mb-0 text-success"><small><%= comment.text %></small></p>
+                    <footer class="blockquote-footer"><small><%= comment.author %></small>
+                      <% if( currentUser.id === comment.author_id || currentUser.permission === "admin" ){ %>
+                      <div class="row pr-3" style="float: right;">
+                        <div><a class="btn btn-outline-warning btn-sm"
+                            href="/users/editpost/editcomment/<%= comment._id %>">Edit</a></div>
+                        <form action="/users/<%= comment._id %>?_method=DELETE" method="POST">
+                          <button class="btn btn-outline-danger btn-sm ml-2">Delete</button>
+                        </form>
+                      </div>
+                      <% } %>
+                    </footer>
+                  </blockquote>
+                </div>
+                <% } %>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+        <div class="card-footer">
+          <% if(currentUser.id === post4selves.Post_by){ %>
+          By <%= post4selves.name %><div style="float: right;"><%= post4selves.date %></div>
+          <% } %>
+          <% if(currentUser.id !== post4selves.Post_by){ %>
+          By <a href="/users/<%= post4selves.Post_by %>/profile"><%= post4selves.name %></a>
+          <div class="text-muted" style="float: right;"><%= post4selves.date %></div>
+          <% } %>
+        </div>
+      </div>
+      <% } %>
+
+      <% } %>
+      <% }) %>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") { panel.style.display = "none"; }
+      else { panel.style.display = "block"; }
+    });
+  }
+
+  var pnu = document.getElementsByClassName("accordion");
+  var cnu = document.getElementsByClassName("commentcheck");
+  var ccount = 0;
+
+  for (a = 0; a < pnu.length; a++) {
+    var pcbase = document.getElementsByClassName("accordion")[a];
+    var pibase = $(pcbase).attr('id');
+    for (b = 0; b < pnu.length; b++) {
+      var cbase = document.getElementsByClassName("commentcheck")[b];
+      var ibase = $(cbase).attr('id');
+      if (ibase === pibase) { ccount++; }
+    }
+    document.getElementById(pibase).innerHTML = ccount + " Comment";
+    ccount = 0;
+  }
+</script>
+
+<%- include("partials/footer") %>

@@ -1,0 +1,59 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-image: linear-gradient(to right, #03045e, #48cae4);
+}
+
+.navbar {
+  padding-left: 15rem;
+  padding-right: 15rem;
+  background: transparent;
+}
+
+.login-section{
+  margin-top: 5rem;
+  padding-left: 20rem;
+  padding-right: 20rem;
+}
+
+.carousel-section{
+  padding-left: 9rem;
+  padding-right: 9rem;
+}
+
+.carousel-caption{
+  padding-bottom: 12rem;
+  font-family: 'Niconne', cursive;
+}
+
+.content-section{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+blockquote{
+  border-left: 1px solid gainsboro;
+  border-top: 1px solid gainsboro;
+  border-right: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+  border-radius: 0.25rem;
+  padding-left: 1rem;
+}
+
+.sticky-top{align-self: flex-start;}
+
+.warning-section{ background-color: black; }
+
+.gif-section{
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
+}
+
+#myTable{ font-family: 'Mali', cursive; }
+
+td{ cursor: pointer; }

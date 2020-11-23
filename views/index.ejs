@@ -1,0 +1,37 @@
+
+<%- include("partials/header") %>
+
+<div class="container mt-5">
+  <div class="row mt-5">
+
+    <div class="col mt-5">
+      <blockquote class="blockquote text-center mt-5 pt-5 border-0">
+        <h1 style="color: white;">You have two hands.</h1>
+        <h1 style="color: white;">One to help youself,</h1>
+        <h1 style="color: white;">the second to help others</h1>
+        <footer class="blockquote-footer" style="color: white;">Audrey Hepburn</footer>
+      </blockquote>
+    </div>
+
+    <div class="col mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Sign up for free</h2>
+          <form action="/users/register" method="POST">
+            <div class="form-group col">
+              <input type="text" class="form-control mt-4" name="username" placeholder="Username" required>
+              <input type="password" class="form-control mt-4" name="password" placeholder="Password" required>
+              <input type="password" class="form-control mt-4" name="confirm" placeholder="Confirm Password" required>
+              <input type="email" class="form-control mt-4" name="email" placeholder="Email" required>
+              <a href=""><button type="submit" class="btn btn-block btn-success mt-4"><i class="fas fa-pencil-alt"></i>
+                  Register</button></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%- include("partials/footer") %>

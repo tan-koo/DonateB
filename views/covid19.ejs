@@ -1,0 +1,256 @@
+<%- include("partials/header1") %>
+<html>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body {
+  font-family: Arial;
+  background: #f1f1f1;
+  }
+  #more {
+    display: none;
+  }
+  .post {   
+  float: right;
+  width: 75%;
+  }
+  .fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+  }
+   .card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  }
+  .accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+.accordion:after {
+  content: '\02795';
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796";
+}
+
+</style>
+
+
+
+
+</body>
+</html>
+ 
+<body style="background-color: aliceblue;">
+    <div>
+        <div >
+            <img src="https://blc.edu/wp-content/uploads/2020/03/COVID19-graphic-with-text-FEATURED-IMAGE.jpg" style="width: 100%; height: 300px;">
+        </div> 
+    </div>     
+    <div class="row">
+      
+      <div class="col-md-3" style="padding-left: 2%; background-color: white;">
+        <h3 class="img-thumbnail" style="background-color:rgb(255, 52, 52); color: white; font-size: 30px; border-radius: 10px; padding-left: 2%;">ตัวเลขผู้ติดเชื้อทั่วโลก</h3>
+        <div class="container" align = 'left' style="width:100%;">
+
+
+          <!--แสดงวันที่ -->
+        <div style="text-align: left; font-size: 36px;">14/4/2563</div>
+
+
+
+
+
+        <gb class="gb" >
+
+        <q1 style="background-color: wheat; display: block;border-radius: 10px; ">  
+        <h4 style="font-size: 24px; font-weight: bolder; color: brown;"><i style='font-size:24px' class='fas'>&#xf2bb;</i>&nbspผู้ติดเชื้อทั่วโลก</h4>
+        <h3 style="font-size: 20px; color: brown;"><i style='font-size:24px' class='fas'>&#xf061;</i>&nbsp9,345,569 ราย</span></h3></q1><br>
+
+        <q2 style="background-color: #F4EFEF; display: block;border-radius: 10px; ">
+        <h4 style="font-size: 24px; font-weight: bolder; color: green;"><i style="font-size:24px" class="fa">&#xf25b;</i>&nbspรักษาหาย</h4>
+        <h3 style="font-size: 20px; color: green;" ><i style='font-size:24px' class='fas'>&#xf061;</i>&nbsp5,036,723 ราย</h3></q2><br>
+
+        <q3 style="background-color: #A4C8F0; display: block;border-radius: 10px; ">  
+        <h4 style="font-size: 24px; font-weight: bolder; color: red;"><i style='font-size:24px' class='fas'>&#xf644;</i>&nbspเสียชีวิต</h4>
+        <h3 style="font-size: 20px; color: red;"><i style='font-size:24px' class='fas'>&#xf061;</i>&nbsp478,949 ราย</h3></q3>
+        <br></gb>
+        
+
+
+        <h4 class="img-thumbnail" style="font-size: 24px; font-weight: bolder; color: white; background-color: red; border-radius: 10px; ">ผู้ติดเชื้อในประเทศไทย</h4>
+        <q1 style="background-color: wheat; display: block; border-radius: 10px;">  
+        <h4 style="font-size: 24px; font-weight: bolder; color: brown;"><i style='font-size:24px' class='fas'>&#xf2bb;</i>&nbspผู้ติดเชื้อในไทย</h4>
+        <h3 style="font-size: 20px; color: brown;"><i style='font-size:24px' class='fas'>&#xf061;</i>&nbsp3,157 ราย</span></h3></q1><br>
+        <q4 style="background-color: #FDB4BF; display: block;border-radius: 10px; ">  
+        <h4 style="font-size: 24px; font-weight: bolder; color:white;"><i class="material-icons">&#xe3f3;</i>&nbspกำลังรักษา</h4>
+        <h3 style="font-size: 20px; color: white;"><i style='font-size:24px' class='fas'>&#xf061;</i>&nbsp73 ราย</h3></q4><br>
+        <q2 style="background-color: #F4EFEF; display: block;border-radius: 10px; ">
+        <h4 style="font-size: 24px; font-weight: bolder; color: green;"><i style="font-size:24px" class="fa">&#xf25b;</i>&nbspรักษาหาย</h4>
+        <h3 style="font-size: 20px; color: green;" ><i style='font-size:24px' class='fas'>&#xf061;</i>&nbsp3,026 ราย</h3></q2><br>
+        <q3 style="background-color: #A4C8F0; display: block;border-radius: 10px; ">  
+        <h4 style="font-size: 24px; font-weight: bolder; color: red;"><i style='font-size:24px' class='fas'>&#xf644;</i>&nbspเสียชีวิต</h4>
+        <h3 style="font-size: 20px; color: red;" ><i style='font-size:24px' class='fas'>&#xf061;</i>&nbsp58 ราย</h3></q3>
+
+
+        </div>
+      </div>
+      <br><br>
+      <div class="col-md-9" style="padding-right: 2%;">
+    
+          <h2 align="center" style="color: rgb(145, 145, 145);"></h2>
+          <img src="https://www.scientificanimations.com/wp-content/uploads/2020/02/Coronavirus-affected-countries.jpg" height="400px" width="100%" >
+          <br><br>
+          <div class="img-thumbnail" style="background-color:rgb(238, 238, 238); width: 120%;">
+            <h3 style="color: blue;"> ประเด็นหลัก</h3>
+            <div style="font-size: 20px;" ><i style='font-size:24px' class='fas'>&#xf0da;</i>&nbsp&nbsp&nbspขณะนี้เกิดการระบาดของโรคติดเชื้อไวรัสโคโรนา 2019 (COVID-19) ที่มีการระบาดใหญ่ (Pandemic) ไปทั่วโลก (ตามประกาศขององค์การอนามัยโลก, 11 มีนาคม 2563) ขอให้ประชาชน และผู้ที่จะเดินทางไปต่างประเทศติดตามสถานการณ์อย่างใกล้ชิด รวมทั้งให้ความร่วมมือ และปฏิบัติตามคำแนะนำต่างๆ เพื่อความปลอดภัยทั้งของตนเองและผู้อื่น
+                 รวมทั้งลดผลกระทบในด้านเศรษฐกิจและสังคม โดยได้กำหนดเขตติดโรคติดต่ออันตราย ได้แก่ จีน (รวมมาเก๊า ฮ่องกง) เกาหลีใต้ อิหร่าน และอิตาลี </div> 
+                 <br> 
+
+                 
+            <button class="accordion" style="font-size: 15px; color: red; font-weight: bold;" >Covid คืออะไร?</button>
+            <div class="panel">
+              <p><i style='font-size:24px' class='fas'>&#xf0da;</i>&nbsp&nbsp&nbspCOVID-19 เป็นโคโรนาไวรัสพันธุ์ใหม่ ที่ไม่เคยพบในมนุษย์มาก่อน   พบไวรัสนี้เป็นครั้งแรกที่วูฮาน  จังหวัดฮูเบในประเทศจีน  ซึ่งเป็นแหล่งเกิดการระบาดใหญ่และยังดำเนินอยู่อย่างต่อเนื่อง  นับแต่นั้นไวรัสนี้ได้แพร่ขยายออกอย่างกว้างขวางในประเทศจีน   
+                  และพบว่ามีผู้ป่วยด้วยไวรัสนี้ในประเทศอื่นด้วยหลายประเทศ   ไวรัส COVID-19 เกี่ยวข้องอย่างใกล้ชิดกับโคโรนาไวรัสที่เกิดกับค้างคาว </p>
+            </div>
+  
+
+
+
+            <button class="accordion" style="font-size: 15px; color: red;font-weight: bold;">มีอาการอย่างไรบ้าง?</button>
+            <div class="panel">
+              <p><i style='font-size:24px' class='fas'>&#xf0da;</i>&nbsp&nbsp&nbsp ผู้ป่วยอาจเป็นไข้   ไอ  น้ำมูกไหล  หายใจถี่และอาการอื่น ๆ อีก
+
+                  ในรายที่หนักมากการติดเชื้อสามารถก่อให้เกิดโรคปอดบวมที่มีภาวะปัญหาหายใจอย่างรุนแรง</p>
+            </div>
+  
+            <button class="accordion" style="font-size: 15px; color: red;font-weight: bold;">ทำไมต้องกักตัว 14 วัน?</button>
+            <div class="panel">
+              <p><i style='font-size:24px' class='fas'>&#xf0da;</i>&nbsp&nbsp&nbspเวลาตั้งแต่ผู้ที่ได้สัมผัสกับไวรัสจนถึงเมื่อปรากฏอาการครั้งแรกโดยทั่วไปเป็นระยะ 5  ถึง  6 วัน แม้ว่าอาจจะอยู่ในช่วง 2 ถึง 14 วันก็ได้   ด้วยเหตุผลดังกล่าวนี้ 
+                   ผู้ที่อาจเคยติดต่อกับผู้ที่ได้รับการยืนยันว่าติดเชื้อจึงถูกขอให้แยกตัวอยู่ตามลำพังเป็นเวลา 14 วัน </p>
+            </div>
+  
+            <button class="accordion" style="font-size: 15px; color: red; font-weight: bold;">จะป้องกันได้อย่างไร?</button>
+            <div class="panel">
+              <p><i style='font-size:24px' class='fas'>&#xf0da;</i><br>1.หมั่นล้างมือให้สะอาดอยู่เสมอด้วยน้ำ และสบู่ หรือแอลกอฮอล์เจลล้างมือ ไม่นำมือมาสัมผัสตา จมูก ปาก<br>2.ใส่หน้ากากอนามัย เมื่ออยู่ในที่ชุมนุมชนหรือที่แออัด<br>3.เลือกรับประทานอาหารที่สะอาด ปรุงสุก ทั้งเนื้อสัตว์ ไข่ และผัก<br>4.ไม่ใช้ของส่วนตัวร่วมกับผู้อื่น (เช่น ผ้าเช็ดหน้า แก้วน้ำ ผ้าเช็ดตัว)<br>5.รักษาร่างกายให้อบอุ่นอยู่เสมอและนอนหลับพักผ่อนให้เพียงพอ</p>
+            </div>
+  
+            <button class="accordion" style="font-size: 15px; color: red; font-weight: bold;">ลักษณะของไวรัส</button>
+            <div class="panel">
+              <p><i style='font-size:24px' class='fas'>&#xf0da;</i><br>
+                  1.มีเปลือกหุ้ม สามารถฆ่าได้ด้วย Alcohol หรือ สบู่/ผงซักฟอก<br>
+                  2.ติดต่อได้ง่าย และพบไวรัสในกระแสเลือดได้นาน<br>
+                  3.มีโอกาสกลายพันธุ์สูง (Mutation)<br>
+                  4.ระยะฟักตัว 2-14 วัน<br>
+                  5.ระยะฟักตัวเฉลี่ย 5.2 วัน<br>
+                  6.แพร่โรคได้เมื่อมีอาการและอาการแสดงเท่านั้น<br>
+              </p>
+            </div>
+  
+          </div>
+          <div class="img-thumbnail" style="background-color:rgb(238, 238, 238); width: 120%;">
+            <h3 style="color: blue;"> รายชื่อโพรงพยาบาลที่สามารถตรวจ covid19 <span style="color: red; font-weight: bold;">FREE</span></h3>
+            <div style="text-decoration: underline;color: blue; padding-left: 2%;"><h5>*หากเข้าเกณฑ์</h5></div>
+            <ul>
+              <li>โรงพยาบาลจุฬาลงกรณ์     </li>
+              <li>โรงพยาบาลราชวิถี  </li>
+              <li>รงพยาบาลเปาโล ทุกสาขา  </li>
+              <li>โรงพยาบาลรามาธิบดี        </li>
+              <li>โรงพยาบาลบางปะกอก 9         </li>
+              <li>โรงพยาบาลพญาไท2        </li>
+              <li>โรงพยาบาลแพทย์รังสิต          </li>
+              <li>โรงพยาบาลศิริราชปิยมหาราชการุณย์    </li>
+            </ul>  
+            <h3 style="color: blue;">เกณฑ์การตรวจcovid19ได้ฟรี<span style="color: red; font-weight: bold;">&nbspFREE</span></h3>
+              <gg style="font-weight: bold; padding-left: 2%;">1.มีประวัติเสี่ยงอย่างใดอย่างหนึ่ง ในช่วง 14 วัน ก่อนมีอาการ</gg>
+                <ul>
+                  <li>เดินทางมาจากเขตติดโรค/พื้นที่ที่มีการระบาดต่อเนื่อง</li>
+                  <li>ประกอบอาชีพที่สัมผัสใกล้ชิดกับผู้ที่เดินทางมาจากเขตติดโรค/พื้นที่ที่มีการระบาดต่อเนื่อง</li>
+                  <li>สัมผัสใกล้ชิดกับผู้ป่วยสงสัย/ผู้ป่วยยืนยัน</li>
+                  <li>เป็นบุคลากรทางการแพทย์ที่สัมผัสกับผู้ป่วยยืนยัน</li>
+                  <li style="color: red;">บวกกับมีอาการของ COVID-19 คือ มีไข้สูง 37.5 องศาเซลเซียสขึ้นไป ร่วมกับอาการอื่นๆ อย่างใดอย่างหนึ่ง เช่น ไอ น้ำมูก เจ็บคอ หายใจเหนื่อยหอบ</li>
+                </ul>
+              <gg style="font-weight: bold; padding-left: 2%;">2.ผู้ป่วยปอดอักเสบที่มีประวัติอย่างใดอย่างหนึ่งต่อไปนี้</gg>
+                <ul>
+                  <li>ใกล้ชิดกับผู้ป่วยสงสัย COVID-19</li>
+                  <li>เป็นบุคลากรทางการแพทย์</li>
+                  <li>เป็นผู้ป่วยปอดอักเสบที่รักษาแล้วอาการไม่ดีขึ้น</li>
+                  <li>เป็นผู้ป่วยปอดอักเสบที่หาสาเหตุไม่ได้</li>
+                </ul>
+                <br>
+                <h3>รักษาสุขภาพกันด้วยเป็นห่วง ^ ^</h3>
+            <div style="padding-left: 5%;"> เพื่อป้องกันความเสี่ยงของ COVID-19 ทุกๆ คนควรสวมหน้ากากอนามัย ล้างมือด้วยสบู่หรือเจลแอลกอฮอล์ทุกครั้งทั้งก่อนออก-หลังเข้าบ้าน 
+              และหากใครต้องการสอบถามข้อมูล</div>
+            <div>/ปรึกษา/ขอคำแนะนำเรื่อง COVID-19 ก็สามารถโทรมาได้ที่ สายด่วนกรมควบคุมโรค 1422</div></div>  
+            
+            
+        </div>
+      </div>
+      
+    <br><br><br>
+    
+    
+
+   
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+                
+                for (i = 0; i < acc.length; i++) {
+                  acc[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                      panel.style.display = "none";
+                      var el = document.getElementById("ct");
+                      var height = el.offsetHeight;
+                      var newHeight = height - 70;
+                      el.style.height = newHeight + 'px';
+                      var el = document.getElementById("post");
+                      var top = el.offsetTop;
+                      var newTop = top - 70;
+                      el.style.top = newTop + 'px';
+                      
+                    } else {
+                      panel.style.display = "block";
+                      var el = document.getElementById("ct");
+                      var height = el.offsetHeight;
+                      var newHeight = height + 70;
+                      el.style.height = newHeight + 'px';
+                      var el = document.getElementById("post");
+                      var top = el.offsetTop;
+                      var newTop = top + 70;
+                      el.style.top = newTop + 'px';
+                    }
+                  });
+                }
+                </script>
+
+
+</body>
