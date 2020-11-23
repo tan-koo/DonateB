@@ -14,28 +14,28 @@ body {
   background: transparent;
 }
 
-.login-section{
+.login-section {
   margin-top: 5rem;
   padding-left: 20rem;
   padding-right: 20rem;
 }
 
-.carousel-section{
+.carousel-section {
   padding-left: 9rem;
   padding-right: 9rem;
 }
 
-.carousel-caption{
+.carousel-caption {
   padding-bottom: 12rem;
   font-family: 'Niconne', cursive;
 }
 
-.content-section{
+.content-section {
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-blockquote{
+blockquote {
   border-left: 1px solid gainsboro;
   border-top: 1px solid gainsboro;
   border-right: 1px solid gainsboro;
@@ -44,16 +44,16 @@ blockquote{
   padding-left: 1rem;
 }
 
-.sticky-top{align-self: flex-start;}
+.sticky-top { align-self: flex-start; }
 
-.warning-section{ background-color: black; }
+.warning-section { background-color: black; }
 
-.gif-section{
+.gif-section {
   padding-left: 3rem;
   padding-right: 3rem;
   padding-bottom: 3rem;
 }
 
-#myTable{ font-family: 'Mali', cursive; }
+#myTable { font-family: 'Mali', cursive; }
 
-td{ cursor: pointer; }
+td { cursor: pointer; }
