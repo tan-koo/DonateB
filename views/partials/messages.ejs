@@ -1,13 +1,18 @@
-<% if(typeof errors != 'undefined'){ %> 
-    <% errors.forEach(function(error) { %>
-      <center><span style="text-align: center; font-size: 20px; background-color: red; color: black;"><%= error.msg %></span></center>
-      <br>
+
+<% if(typeof errors !='undefined' ){ %>
+  <% errors.forEach(function(error) { %>
+    <center><span style="text-align: center; font-size: 20px; background-color: red; color: black;">
+        <%= error.msg %>
+      </span></center>
+    <br>
     <% });} %>
 
 
-    <%if(typeof error == "undefined"){%>
+      <%if(typeof error=="undefined" ){%>
 
-      <% } else { %>
-        <div>
-         <center>  <span style="text-align: center; font-size: 20px; background-color: skyblue; color: black;"></span>  Your are registed and can log in now </span></center>
-     </div> <%}%>
+        <% } else { %>
+          <div>
+            <center> <span style="text-align: center; font-size: 20px; background-color: skyblue; color: black;"></span>
+              Your are registed and can log in now </span></center>
+          </div>
+          <%}%>
