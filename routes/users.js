@@ -16,8 +16,6 @@ router.get('/login', function (req, res) { res.render('login'); })
 
 router.get('/register', function (req, res) { res.render('register'); })
 
-router.get('/webinfor', function (req, res) { res.render('webinfor'); })
-
 router.post('/register', function (req, res) {
   const { username, password, confirm, email } = req.body;
   let errors = [];

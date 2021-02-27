@@ -57,3 +57,8 @@ blockquote {
 #myTable { font-family: 'Mali', cursive; }
 
 td { cursor: pointer; }
+
+.edit-section {
+  padding-left: 13rem;
+  padding-right: 13rem;
+}
